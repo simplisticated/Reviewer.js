@@ -1,7 +1,3 @@
-<p align="center" >
-    <img src="https://github.com/igormatyushkin014/Protein/blob/master/images/logo-1024-300.png" alt="Protein" title="Protein">
-</p>
-
 # At a Glance
 
 `Reviewer.js` is a JavaScript framework for scraping web pages.
