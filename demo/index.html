@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="utf-8">
+	<head>
+		<title>Reviewer.js Demo</title>
+  		<meta charset="utf-8">
+  		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+  		<!-- jQuery -->
+		<script type="text/javascript" src="jquery/jquery-3.1.1.min.js"></script>
+
+		<!-- Bootstrap -->
+		<script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css" />
+
+		<!-- Reviewer -->
+		<script type="text/javascript" src="../lib/reviewer.js"></script>
+
+		<script type="text/javascript" src="js/main.js"></script>
+
+  		<link rel="stylesheet" type="text/css" href="css/style.css">
+	</head>
+
+	<body>
+        <nav class="navbar navbar-inverse">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">Reviewer.js Demo</a>
+				</div>
+				<div id="navbar" class="collapse navbar-collapse">
+					<ul class="nav navbar-nav navbar-left">
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+            <h2>
+                Scraping data from <a href="http://android.com" target="_blank">http://android.com</a>
+            </h2>
+			<p id="log">
+                Click below to scrap data from the website.
+            </p>
+            <button id="update-button" type="button" class="btn btn-info" data-dismiss="modal">Update</button>
+		</div>
+	</body>
+</html>
