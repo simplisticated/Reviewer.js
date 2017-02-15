@@ -14,6 +14,10 @@ Just copy [lib/reviewer.js](./lib/reviewer.js) file to your project and don't fo
 
 Let's assume we want to obtain title and description from [android.com](http://android.com) website. First of all, we need to take a look at HTML structure of the main page on that website.
 
+<img src="https://github.com/igormatyushkin014/Reviewer.js/blob/master/images/page.png" alt="Page" title="Page">
+
+<img src="https://github.com/igormatyushkin014/Reviewer.js/blob/master/images/html.png" alt="HTML" title="HTML">
+
 So the title is available with `$("div.l-section__intro h2").first()` selector and description is available with `$("div.l-section__intro p").first()` selector.
 
 With `Reviewer.js` it's incredibly easy to obtain this data from the web page:
@@ -21,35 +25,35 @@ With `Reviewer.js` it's incredibly easy to obtain this data from the web page:
 ```javascript
 new Reviewer({
     url: "http://android.com",
-		useCorsProxy: true,
-		fields: [
-		    "title",
-			  "description"
-		],
-		getFieldValue: function(fieldIndex, htmlString) {
+    useCorsProxy: true,
+    fields: [
+        "title",
+	"description"
+    ],
+    getFieldValue: function(fieldIndex, htmlString) {
         switch (fieldIndex) {
-				    case 0:
-					      var html = $.parseHTML(htmlString);
-      					var element = $(html).find("div.l-section__intro h2").first();
-					      var text = element.text();
-      					return text;
-				    case 1:
-      					var html = $.parseHTML(htmlString);
-			      		var element = $(html).find("div.l-section__intro p").first();
-      					var text = element.text();
-			      		return text;
-    				default:
-		      			break;
-			  }
-		},
-		onSuccess: function(content) {
-		    var report = "Title: " + content.title + "<br/>" + "Description: " + content.description;
-			  console.log(report);
-		},
-		onError: function(content) {
-			var report = "Error";
-			console.log(report);
-		}
+            case 0:
+	        var html = $.parseHTML(htmlString);
+      	        var element = $(html).find("div.l-section__intro h2").first();
+	        var text = element.text();
+	        return text;
+	    case 1:
+	        var html = $.parseHTML(htmlString);
+	    	var element = $(html).find("div.l-section__intro p").first();
+	    	var text = element.text();
+	    	return text;
+	    default:
+	    	break;
+    	}
+    },
+    onSuccess: function(content) {
+        var report = "Title: " + content.title + "<br/>" + "Description: " + content.description;
+	console.log(report);
+    },
+    onError: function(content) {
+        var report = "Error";
+	console.log(report);
+    }
 }).start();
 ```
 
